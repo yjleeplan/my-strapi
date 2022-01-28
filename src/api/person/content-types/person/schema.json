@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "people",
+  "info": {
+    "singularName": "person",
+    "pluralName": "people",
+    "displayName": "person",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "department": {
+      "type": "string"
+    },
+    "birth_year": {
+      "type": "integer",
+      "required": true
+    },
+    "birth_month": {
+      "type": "integer",
+      "required": true
+    },
+    "birth_day": {
+      "type": "integer",
+      "required": true
+    },
+    "histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::history.history",
+      "mappedBy": "person"
+    },
+    "uid": {
+      "type": "uid",
+      "required": true
+    }
+  }
+}
